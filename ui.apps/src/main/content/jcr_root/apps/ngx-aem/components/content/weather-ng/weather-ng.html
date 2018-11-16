@@ -1,0 +1,10 @@
+<div data-sly-test="${wcmmode.edit}" data-sly-use.weather="com.did.core.models.WeatherModel">
+    <h3>Drag here the components you want to display in your weather component</h3>
+    <div data-sly-resource="${'content' @ resourceType='wcm/foundation/components/parsys'}"></div>
+</div>
+
+
+<weather-ng data-sly-test="${wcmmode.disabled}"
+            data-sly-use.weather="com.did.core.models.WeatherModel" unit="${weather.unitType}">
+    <div data-sly-resource="${'content' @ resourceType='wcm/foundation/components/parsys'}"></div>
+</weather-ng>

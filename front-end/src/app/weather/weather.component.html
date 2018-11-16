@@ -1,0 +1,45 @@
+<div class="container" *ngIf="weatherForecast3Hourly">
+
+  <div class="row">
+    <div class="col-12">
+      <ng-content></ng-content>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="weather">
+        <div class="current" [style.background-image]="getBackgroundImage(weatherForecast3Hourly.list[0].weather)">
+          <div class="info">
+            <div>&nbsp;</div>
+            <div class="city">
+              <small>
+                <small>CITY:</small>
+              </small>
+              {{weatherForecast3Hourly.city.name}}
+            </div>
+            <div class="temp">{{weatherForecast3Hourly.list[0].temp}}&deg;
+              <small>{{unitPostfix}}</small>
+            </div>
+            <div>&nbsp;</div>
+          </div>
+          <div class="icon">
+            <app-weather-icon [type]="weatherForecast3Hourly.list[0].weather"></app-weather-icon>
+          </div>
+        </div>
+        <div class="future">
+          <div class="day" *ngFor="let day of weatherForecastDaily" (click)="getDetailsFor(day.date)">
+            <h3>{{day.dateString}}</h3>
+            <p><app-weather-icon [type]="day.weather"></app-weather-icon></p>
+            <p>Min: {{day.minTemp}}&deg;{{unitPostfix}}</p>
+            <p>Max: {{day.maxTemp}}&deg;{{unitPostfix}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <app-weather-details [details]="weatherDetailsArray"></app-weather-details>
+  </div>
+</div>
