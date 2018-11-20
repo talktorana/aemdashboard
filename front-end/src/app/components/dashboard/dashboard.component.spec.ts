@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UsertableComponent } from './usertable.component';
+import { UsertableComponent } from './dashboard.component';
 
 describe('UsertableComponent', () => {
   let component: UsertableComponent;
